@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url(bg.webp);
+  background-position: center;
+  background-size: cover;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: brown;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: linear-gradient(135deg,rgba(255,255,255,0.01),rgba(255,255,255,0));
+  backdrop-filter: blur(7px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border: 1px #fff solid;
+  margin: 0 rem; /* Add margin to separate the container from the table */
+}
+
+/* Style the form inside the container */
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=text],
+input[type=date],
+input[type=submit] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  ;
+}
+
+input[type=submit] {
+  width: 40%;
+  padding: 12px 12px;
+  margin: 5px auto; /* Center the submit button horizontally */
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 35px;
+}
+
+.table-container {
+  width: 90%; /* Adjusted width to match the container */
+  max-width: 600px;
+  background: linear-gradient(135deg,rgba(255,255,255,0.15),rgba(255,255,255,0));
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin: 1rem; /* Add margin to separate the table from the container */
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Media Queries for responsiveness */
+
+/* For smaller devices, adjust the container padding and font size */
+@media only screen and (max-width: 600px) {
+  .container,
+  .table-container {
+    padding: 1rem;
+    margin: 0.5rem; /* Adjusted margin for smaller devices */
+  }
+  input[type=text],
+  input[type=date],
+  input[type=submit] {
+    padding: 10px 16px;
+  }
+  .table th,
+  .table td {
+    padding: 6px 10px;
+  }
+}
+
+/* For even smaller devices, adjust the container padding and font size further */
+@media only screen and (max-width: 400px) {
+  .container,
+  .table-container {
+    padding: 0.5rem;
+    margin: 0.25rem; /* Adjusted margin for very small devices */
+  }
+  input[type=text],
+  input[type=date],
+  input[type=submit] {
+    padding: 8px 12px;
+  }
+  .table th,
+  .table td {
+    padding: 4px 8px;
+  }
+}

@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(bg.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    position: relative;
+    top: 20%;
+      text-align: center;
+      font-size: xx-large;
+      padding: 20px;
+      color: #ffffff;
+      font-family: comic sans MS;
+      width:40%;
+      height: 35%;
+      background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 20px;
+      border: 1px soild rgba(255,255,255,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+      padding:50px;
+      color:brown;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+    /* For smaller devices, adjust the container padding and font size */
+    @media only screen and (max-width: 600px) {
+        .container{
+            position: relative;
+    top: 40%;
+        }
+    }
