@@ -2,7 +2,10 @@
 
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+import datetime
+from main import check_today_birthdays
 
+last_run = datetime.datetime.now()
 app = Flask(__name__, static_folder='static')
 
 # code for database starts from here
@@ -20,8 +23,18 @@ class Birthday(db.Model):
     def __repr__(self) -> str:
         return f"{self.user_id} - {self.birthday}"
 
+def check_and_run_if_needed():
+    global last_run
+    if (datetime.datetime.now() - last_run).days >= 1:
+        check_today_birthdays()
+        last_run = datetime.datetime.now()
+        return True
+    else:
+        return False
+
 @app.route('/', methods=['GET', 'POST'])
 def form():
+    run_check = check_and_run_if_needed()
     # this is the main code
     if request.method == 'POST':
         # get data of id and date by this method
@@ -35,6 +48,8 @@ def form():
         return redirect('/show')
 
     birthdays = Birthday.query.all()
+    if run_check:
+            check_today_birthdays()
     # the line birthdays = birthdays is the line where we send the data to html
     return render_template('form.html', birthdays=birthdays)
 
